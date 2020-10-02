@@ -46,16 +46,15 @@
   "homepage": "https://github.com/Jaid/current-year-cli",
   "keywords": [
     "cli",
-    "field",
     "node",
     "node-js",
     "nodejs",
-    "npm",
-    "package",
-    "package-json",
-    "pkg",
     "print",
     "util",
-    "utility"
+    "utility",
+    "date",
+    "year",
+    "moment",
+    "boilerplate"
   ]
 }
