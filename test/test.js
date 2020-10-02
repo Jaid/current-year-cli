@@ -1,6 +1,5 @@
-import path from "path"
-
 import coffee from "coffee"
+import path from "path"
 
 const main = path.resolve(process.env.MAIN)
 
