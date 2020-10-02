@@ -1,36 +1,26 @@
-import fsp from "@absolunet/fsp"
-import {isObjectLike} from "lodash"
-import path from "path"
 import yargs from "yargs"
 
-const getPackageField = async (cwd, field) => {
-  const packageJsonFile = path.join(cwd, "package.json")
-  const packageJsonExists = await fsp.pathExists(packageJsonFile)
-  if (packageJsonExists) {
-    const pkg = await fsp.readJson(packageJsonFile)
-    if (pkg?.[field]) {
-      const value = pkg[field]
-      if (Array.isArray(value)) {
-        return value.join("\n")
-      }
-      if (isObjectLike(value)) {
-        return Object.keys(value).join("\n")
-      }
-      return value
-    }
+const job = ({printBreak}) => {
+  const currentDate = new Date
+  const currentYear = currentDate.getFullYear()
+  const output = String(currentYear)
+  if (printBreak) {
+    console.log(output)
+  } else {
+    process.stdout.write(output)
   }
-  process.exit(1)
-}
-
-const job = async ({cwd, field}) => {
-  const value = await getPackageField(cwd, field)
-  process.stdout.write(String(value))
 }
 
 const builder = () => ({
-  cwd: {
-    default: process.cwd(),
-    type: "string",
+  printBreak: {
+    default: false,
+    description: "Print line break",
+    type: "boolean",
   },
 })
-yargs.command("$0 <field>", "Returns the value of a package field", builder, job).argv
+
+yargs
+  .scriptName(_PKG_NAME)
+  .version(_PKG_VERSION)
+  .command("$0", _PKG_DESCRIPTION, builder, job)
+  .argv

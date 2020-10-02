@@ -3,14 +3,14 @@ import path from "path"
 
 const main = path.resolve(process.env.MAIN)
 
-it("should run internal command", () => coffee.fork(main, ["webpackConfigJaid"])
+it("should run", () => coffee.fork(main)
   .expect("code", 0)
-  .expect("stdout", "cli")
+  .expect("stdout", /^2\d{3}$/)
   .debug(true)
   .end())
 
-it("should run internal command", () => coffee.fork(main, ["scripts"])
+it("should run with options", () => coffee.fork(main, ["--print-break"])
   .expect("code", 0)
-  .expect("stdout", /\ntest\n/s)
+  .expect("stdout", /^2\d{3}\n$/)
   .debug(true)
   .end())
