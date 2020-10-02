@@ -44,17 +44,5 @@
     "url": "https://github.com/jaid/current-year-cli"
   },
   "homepage": "https://github.com/Jaid/current-year-cli",
-  "keywords": [
-    "cli",
-    "node",
-    "node-js",
-    "nodejs",
-    "print",
-    "util",
-    "utility",
-    "date",
-    "year",
-    "moment",
-    "boilerplate"
-  ]
+  "keywords": []
 }
