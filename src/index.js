@@ -1,20 +1,17 @@
 import yargs from "yargs"
 
-const job = ({printBreak}) => {
+const job = ({noBreak}) => {
+  const log = noBreak ? process.stdout.write : console.log
   const currentDate = new Date
   const currentYear = currentDate.getFullYear()
   const output = String(currentYear)
-  if (printBreak) {
-    console.log(output)
-  } else {
-    process.stdout.write(output)
-  }
+  log(output)
 }
 
 const builder = () => ({
-  printBreak: {
+  noBreak: {
     default: false,
-    description: "Print line break",
+    description: "If set, does not print the line break",
     type: "boolean",
   },
 })
