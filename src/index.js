@@ -20,7 +20,7 @@ const builder = () => ({
 })
 
 yargs
-  .scriptName(_PKG_NAME)
-  .version(_PKG_VERSION)
-  .command("$0", _PKG_DESCRIPTION, builder, job)
+  .scriptName(process.env.REPLACE_PKG_NAME)
+  .version(process.env.REPLACE_PKG_VERSION)
+  .command("$0", process.env.REPLACE_PKG_DESCRIPTION, builder, job)
   .argv
