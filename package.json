@@ -22,9 +22,6 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "babel:prod": "rimraf dist/transpiled/production && NODE_ENV=production babel --out-dir dist/transpiled/production --source-maps true src",
-    "babel:dev": "rimraf dist/transpiled/development && NODE_ENV=development babel --out-dir dist/transpiled/development src",
-    "babel:test": "rimraf dist/transpiled/test && NODE_ENV=test babel --out-dir dist/transpiled/test src",
     "build:prod": "NODE_ENV=production webpack",
     "build:dev": "NODE_ENV=development webpack",
     "test": "npm run build:prod && NODE_ENV=production MAIN=dist/package/production/cli.js jest --runInBand",
