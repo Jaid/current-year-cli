@@ -3,6 +3,11 @@ import yargs from "yargs"
 import handleDefaultCommand from "src/commands"
 
 /**
+ * @typedef {Object} Options
+ * @prop {boolean} newline
+ */
+
+/**
  * @type {import("yargs").CommandBuilder}
  */
 const commandBuilder = {

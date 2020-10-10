@@ -1,6 +1,5 @@
 /**
- * @typedef {Object} Argv
- * @prop {boolean} newline
+ * @typedef {import("src").Options} Argv
  */
 
 /**
