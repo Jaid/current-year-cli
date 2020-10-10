@@ -1,9 +1,9 @@
 /**
- * @typedef {import("src").Options} Argv
+ * @typedef {Object} Argv
  */
 
 /**
- * @param {import("yargs").Arguments<Argv>} argv
+ * @param {import("yargs").Arguments<import("src").Options & Argv>} argv
  */
 export default argv => {
   const currentDate = new Date
