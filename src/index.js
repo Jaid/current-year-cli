@@ -1,6 +1,6 @@
 import yargs from "yargs"
 
-import handleCommand from "src/main"
+import handleCommand from "src/commands"
 
 /**
  * @type {import("yargs").CommandBuilder}
