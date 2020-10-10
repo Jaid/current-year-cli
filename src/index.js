@@ -1,6 +1,6 @@
 import yargs from "yargs"
 
-import handleCommand from "src/commands"
+import handleDefaultCommand from "src/commands"
 
 /**
  * @type {import("yargs").CommandBuilder}
@@ -16,5 +16,5 @@ const commandBuilder = {
 yargs
   .scriptName(process.env.REPLACE_PKG_NAME)
   .version(process.env.REPLACE_PKG_VERSION)
-  .command("*", process.env.REPLACE_PKG_DESCRIPTION, commandBuilder, handleCommand)
+  .command("*", process.env.REPLACE_PKG_DESCRIPTION, commandBuilder, handleDefaultCommand)
   .parse()
