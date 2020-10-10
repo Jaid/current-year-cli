@@ -1,3 +1,4 @@
+import {it} from "@jest/globals"
 import coffee from "coffee"
 import path from "path"
 
