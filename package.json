@@ -53,5 +53,6 @@
     "util",
     "utility",
     "year"
-  ]
+  ],
+  "type": "module"
 }
